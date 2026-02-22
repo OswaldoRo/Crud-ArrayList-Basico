@@ -1,3 +1,4 @@
+package crud;
 
 public class Usuario{
 
@@ -41,7 +42,7 @@ public class Usuario{
 
     @Override
     public String toString() {
-        return "Usuario{" +
+        return "crud.Usuario{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", email='" + email + '\'' +
