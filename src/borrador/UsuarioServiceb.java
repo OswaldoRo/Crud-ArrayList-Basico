@@ -24,18 +24,8 @@ public class UsuarioServiceb{
 
     // Devuelve la lista completa de usuarios
 
-
-
-
-
-
-
-
-
-
-
-    public ArrayList<Usuariob> mostrarLista(){
-        return listaUsuarios;
+    public ArrayList<Usuariob> decolverLista(){
+           return listaUsuariosb ;
+        }
     }
-}
-
+    // Actualizar Update
