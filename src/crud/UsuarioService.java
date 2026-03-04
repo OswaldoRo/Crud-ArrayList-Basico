@@ -20,28 +20,69 @@ Usa bucles (for o for-each) para recorrer la lista
  */
 
 import java.util.ArrayList;
-public class UsuarioService{
-    ArrayList<Usuario>listaUsuarios = new ArrayList<>();
+public class UsuarioService {
+    ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 
-    // Agregar usuario
-    public void agregarUsuario(Usuario usuario){
-            listaUsuarios.add(usuario);
-        }
+    // Metoddo Agregar usuarios a la lista
 
-    // Leer o buscar por id
-    public Usuario buscarUsuarioId(int id){
-        for (int i = 0;i < listaUsuarios.size();i++){
-            if(listaUsuarios.get(i).getId()==id){
+    public void agregarUsuario(Usuario usuario) {
+        listaUsuarios.add(usuario);
+    }
+
+    // Leer (buscar) usuarios por id
+
+    public Usuario buscarUsuarioId(int id) {
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getId() == id) {
                 return listaUsuarios.get(i);
             }
         }
         return null;
     }
-    // Devuelve la lista completa de usuarios
-    public ArrayList<Usuario> mostrarLista(){
+
+    //Leer todos los Usuarios
+
+    public ArrayList<Usuario> leerUsuarios() {
         return listaUsuarios;
-      }
     }
+
+    //Actualizar Usuarios completo
+
+    public boolean actualizarUsuarios(Usuario usuarioActualizado) {
+        for (int i = 0; i < listaUsuarios.size(); i++) {
+            if (listaUsuarios.get(i).getId() == usuarioActualizado.getId()) {
+                listaUsuarios.set(i, usuarioActualizado);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //Actualizar email
+
+    public boolean actualizarEmail(int id, String nuevoEmail){
+    for (int i = 0; i < listaUsuarios.size();i++){
+        if (listaUsuarios.get(i).getId()==id){
+            listaUsuarios.get(i).setEmail(nuevoEmail);
+            return true;
+        }
+
+    }
+    return false;
+    }
+
+    //Delete
+
+    public boolean eliminarUsuario(int id){
+    for (int i = 0;i < listaUsuarios.size();i++){
+     if (listaUsuarios.get(i).getId() == id){
+         listaUsuarios.remove(i);
+         return true;
+            }
+        }
+    return false;
+    }
+}
 
 
 
